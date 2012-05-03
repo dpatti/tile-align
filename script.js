@@ -15,7 +15,18 @@ $(function(){
         overlay.add(marker).css('left', offset);
         marker.text(offset);
     }
+
+    // Interface
+    $("#url").keydown(function(e){
+        if (e.keyCode == 13) {
+            load_image($(this).val());
+        }
+    });
+    $("#load").click(function(){
+        load_image($(this).prev().val());
+    });
     
+    // Key
     $(document).keydown(function(e){
         var shamt = e.shiftKey ? 10 : 1;
         if (e.keyCode == 37) {
@@ -27,15 +38,7 @@ $(function(){
         }
     });
 
-    $("#url").keydown(function(e){
-        if (e.keyCode == 13) {
-            load_image($(this).val());
-        }
-    });
-    $("#load").click(function(){
-        load_image($(this).prev().val());
-    });
-
+    // Dragging
     var start_x=null;
     $(overlay).mousedown(function(e){
         start_x = e.pageX;
