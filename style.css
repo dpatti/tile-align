@@ -37,6 +37,11 @@ a {
     margin-top: -5;
     font-size: 16px;
 }
+#marker .offset:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    color: #999;
+}
 
 input[type=text] {
     width: 500px;
