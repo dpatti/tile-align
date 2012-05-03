@@ -12,6 +12,9 @@ a {
 #options {
     margin: 15px;
 }
+#options p {
+    width: 700px;
+}
 
 #edit-area {
     margin: 0;
