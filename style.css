@@ -5,6 +5,10 @@ body {
     padding: 0;
 }
 
+a {
+    color: #999;
+}
+
 #options {
     margin: 15px;
 }
@@ -23,7 +27,7 @@ body {
 
 #marker {
     position: relative;
-    border-left: 1px solid black;
+    border-left: 1px solid #999;
     padding: 20px;
     height: 100px;
     width: 100px;

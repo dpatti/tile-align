@@ -52,5 +52,16 @@ $(function(){
     }).mouseup(function(){
         start_x = null;
     })
+
+    // Lights
+    $(document).on('click', "a.lights", function(){
+        $("body").css({
+            backgroundColor: $(this).is(".off") ? '#000' : '#fff',
+            color:           $(this).is(".off") ? '#fff' : '#000',
+        });
+        var other = $("span.lights");
+        other.replaceWith($("<a>").text(other.text()).addClass(other.attr('class')).attr('href', 'javascript:;'));
+        $(this).replaceWith($("<span>").text($(this).text()).addClass($(this).attr('class')));
+    });
 });
 
