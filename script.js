@@ -71,8 +71,11 @@ $(function(){
     });
     $(document).mousemove(function(e){
         if (start_x != null) {
-            set_position(e.pageX - start_x);
-            start_x = e.pageX;
+            var diff = Math.round((e.pageX - start_x) / scale);
+            if (Math.abs(diff) >= 1) {
+                set_position(diff);
+                start_x += diff * scale;
+            }
         }
     }).mouseup(function(){
         start_x = null;
