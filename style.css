@@ -28,10 +28,11 @@ body {
     height: 100px;
     width: 100px;
     margin-top: -5;
+    font-size: 16px;
 }
 
 input[type=text] {
-    width: 200px;
+    width: 500px;
 }
 input {
     font-size: 14px;

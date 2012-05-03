@@ -11,7 +11,7 @@ $(function(){
     }
 
     var position = function(delta) {
-        offset = Math.max(0, offset + delta);
+        offset = Math.min(img.width(), Math.max(0, offset + delta));
         overlay.add(marker).css('left', offset);
         marker.text(offset);
     }
@@ -32,17 +32,22 @@ $(function(){
             load_image($(this).val());
         }
     });
+    $("#load").click(function(){
+        load_image($(this).prev().val());
+    });
 
     var start_x=null;
     $(overlay).mousedown(function(e){
         start_x = e.pageX;
-    }).mousemove(function(e){
-        if (start_x) {
+    });
+    $(document).mousemove(function(e){
+        if (start_x != null) {
             position(e.pageX - start_x);
+            console.log(e.pageX - start_x);
             start_x = e.pageX;
         }
     }).mouseup(function(){
         start_x = null;
-    });
+    })
 });
 
