@@ -11,7 +11,7 @@ $(function(){
         orig_width = null;
         scale = 1;
         offset = 100;
-        set_position(0);
+        set_position();
         img.add(overlay).css('width', '').attr('src', url);
     }
 
@@ -23,18 +23,20 @@ $(function(){
     marker_update();
 
     var set_position = function(delta) {
-        if (orig_width)
+        if (orig_width && delta)
             offset = Math.min(orig_width, Math.max(0, offset + delta));
         overlay.add(marker).css('left', offset * scale);
         marker_update();
     }
 
     var set_scale = function(delta) {
+        if (!delta)
+            delta = 0;
         if (orig_width) {
             var imgs = img.add(overlay);
             scale *= Math.pow(1.1, delta);
             imgs.width(orig_width * scale);
-            set_position(0);
+            set_position();
         }
     }
 
@@ -102,7 +104,7 @@ $(function(){
                     .val(offset)
                     .change(function(){
                         offset = parseInt($(this).val()) || 0;
-                        set_position(0);
+                        set_position();
                         // Re-set value in case it was bounded
                         $(this).val(offset);
                         this.select();
