@@ -1,0 +1,39 @@
+body {
+    font-family: Verdana;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+}
+
+#options {
+    margin: 15px;
+}
+
+#edit-area {
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+#overlay {
+    position: absolute;
+    top: 0;
+    cursor: pointer;
+}
+
+#marker {
+    position: relative;
+    border-left: 1px solid black;
+    padding: 20px;
+    height: 100px;
+    width: 100px;
+    margin-top: -5;
+}
+
+input[type=text] {
+    width: 200px;
+}
+input {
+    font-size: 14px;
+    padding: 4px;
+}
