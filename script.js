@@ -1,6 +1,6 @@
 $(function(){
     var offset = 100;
-    var img = $("<img>").attr('id', 'static').attr('src', 'http://screens.nca-guild.com/uploads/1074.png');
+    var img = $("<img>").attr('id', 'static').attr('src', 'sample.png');
     var overlay = img.clone().attr('id', 'overlay').attr('draggable', false).css('left', offset);
     var marker = $("<div>").attr('id', 'marker').css('left', offset).text(offset);
     
